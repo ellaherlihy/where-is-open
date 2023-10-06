@@ -5,9 +5,9 @@ const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 export default function FindOpenPubs() {
   const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
   const [error, setError] = useState(null);
   const [bars, setBars] = useState([]);
+  const [longitude, setLongitude] = useState(null);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -25,6 +25,7 @@ export default function FindOpenPubs() {
     }
   }, []);
 
+
   useEffect(() => {
     const fetchData = async () => {
         const response = await axios.get(
@@ -41,7 +42,7 @@ export default function FindOpenPubs() {
           }
         );
         setBars(response.data.results.slice(0, 5));
-        // console.log(response.data.results[4].vicinity);
+        console.log(response);
       };
     fetchData();
     },[latitude, longitude]);
