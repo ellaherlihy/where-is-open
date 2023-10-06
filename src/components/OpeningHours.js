@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 // require('dotenv').config()
 
-// const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
-const apiKey = "AIzaSyAr0k6GSZAj31mUG9nvH3CLoMfMB9SlBik"
+const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 function OpeningHours() {
   const [locationName, setLocationName] = useState('');
